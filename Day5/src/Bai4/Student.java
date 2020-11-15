@@ -1,17 +1,18 @@
 package Bai4;
+
 import java.util.Scanner;
 
-public class Students {
+public class Student {
     private int id;
     private String name;
     private int age;
     private String address;
     private double gpa;
 
-    public Students() {
+    public Student() {
     }
 
-    public Students(int id, String name, int age, String address, int gpa) {
+    public Student(int id, String name, int age, String address, double gpa) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -19,13 +20,11 @@ public class Students {
         this.gpa = gpa;
     }
 
-    public Students setStudents(Students s) {
-        this.gpa = s.gpa;
-        this.address = s.address;
-        this.age = s.age;
-        this.id = s.id;
-        this.name = s.name;
-        return this;
+    public Student(String name, int age, String address, double gpa) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.gpa = gpa;
     }
 
     public int getId() {
@@ -68,27 +67,23 @@ public class Students {
         this.gpa = gpa;
     }
 
-    public void inputStudent(){
+    public void Nhap(){
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhap vao id: ");
+        System.out.print("Nhap vao ma sinh vien: ");
         id = sc.nextInt();
+        System.out.print("Nhap vao ten cua sinh vien: ");
         sc.nextLine();
-        System.out.print("Nhap vao ten: ");
         name = sc.nextLine();
-        System.out.print("Nhap vao tuoi: ");
+        System.out.print("Nhap vao tuoi cua sinh vien: ");
         age = sc.nextInt();
+        System.out.print("Nhap vao dia chi cua sinh vien: ");
         sc.nextLine();
-        System.out.print("Nhap vao dia chi: ");
         address = sc.nextLine();
-        System.out.print("Nhap vao gpa: ");
+        System.out.print("Nhap vao diem trung binh cua sinh vien: ");
         gpa = sc.nextDouble();
     }
 
-    public void ouputStudent(){
-        System.out.println("ID: " + id);
-        System.out.println("Ho ten: " + name);
-        System.out.println("Tuoi: " + age);
-        System.out.println("Dia chi: " + address);
-        System.out.println("GPA: " + gpa);
+    public void Xuat(){
+        System.out.println("MSV: " + id + ", Ten: " + name + ", Tuoi: " + age + ", Dia chi: " + address + ", GPA: " + gpa);
     }
 }
